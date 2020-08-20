@@ -49,6 +49,7 @@ Things you may want to cover:
 |  Column  |  Type  |  Options  | 
 | ---- | ---- | ----|
 |  user  |  references  |  null: false, foreign: true  |
+|  item  |  references  |  null: false, foreign: true  |
 
 ### Asociation
 
