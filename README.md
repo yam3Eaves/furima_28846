@@ -30,6 +30,11 @@ Things you may want to cover:
 |  img_url  |  string  |  null: false   |
 |  name  |  string  |  null: false  |
 |  explanation  |  text  |  null: false  |
+| category | integer | null: false |
+| condition | integer | null: false |
+| sipping_charge_bearer | integer | null: false |
+| shipping_area | integer | null: false |
+| days_untill_shipping | integer | null: false |
 |  price  |  integer  |  null: false  |
 |  user  |  references  |  null: false, foreign_key: true  |
 
