@@ -6,12 +6,12 @@ class User < ApplicationRecord
 
   with_options  presence: true do
     validates :nickname
-    validates :email, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/}
-    validates :password, length: { minimum: 6 }, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/}
-    validates :last_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/}
-    validates :first_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/}
-    validates :last_name_kana, format: { with: /\A[ァ-ヶー－]+\z/}
-    validates :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/}
+    validates :email, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/ }
+    validates :password, length: { minimum: 6 }, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/ }
+    validates :last_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/ }
+    validates :first_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/ }
+    validates :last_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
+    validates :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
     validates :birthday 
   end
 end
