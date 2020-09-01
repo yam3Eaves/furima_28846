@@ -48,8 +48,8 @@ Things you may want to cover:
 ## purchasers
 |  Column  |  Type  |  Options  | 
 | ---- | ---- | ----|
-|  user  |  references  |  null: false, foreign: true  |
-|  item  |  references  |  null: false, foreign: true  |
+|  user  |  references  |  null: false, foreign_key: true  |
+|  item  |  references  |  null: false, foreign_key: true  |
 
 ### Asociation
 
