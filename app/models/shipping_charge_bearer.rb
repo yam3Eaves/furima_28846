@@ -1,0 +1,2 @@
+class ShippingChargeBearer < ApplicationRecord
+end
