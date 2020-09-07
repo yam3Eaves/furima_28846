@@ -21,10 +21,6 @@ class Item < ApplicationRecord
   validates :shipping_area_id,                numericality: { other_than: 0 }
   validates :days_untill_shipping_id,         numericality: { other_than: 0 }
   validates :price,                           numericality: { only_ineger: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
-  validates :user
   validates :image
  end
-
-
- 
 end

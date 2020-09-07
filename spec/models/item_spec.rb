@@ -110,18 +110,14 @@ RSpec.describe Item, type: :model do
         it 'ユーザーが紐付いていないと出品できない' do
           @item.user = nil
           @item.valid?
-          expect(@tweet.errors.full_messages).to include("User must exist")
+          expect(@item.errors.full_messages).to include("User must exist")
         end
 
         it '画像が空では出品できない' do
           @item.image = nil
           @item.valid?
-          expect(@tweet.errors.full_messages).to include("Image can't be blank")
+          expect(@item.errors.full_messages).to include("Image can't be blank")
         end
-
-
       end
-
   end
-
 end
