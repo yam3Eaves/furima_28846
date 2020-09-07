@@ -115,39 +115,8 @@ RSpec.describe Item, type: :model do
           expect(@tweet.errors.full_messages).to include("User must exist")
         end
 
-
-        it '' do
-        end
-
-        it '' do
-        end
-
-        it '' do
-        end
-        it '' do
-        end
-
-
-
-
-
-
-
-
-
       end
 
   end
-
-
-
-
-
-
-
-
-
-
-
 
 end

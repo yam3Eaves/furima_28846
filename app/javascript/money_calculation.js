@@ -16,12 +16,6 @@ function calculate() {
 
       item_tax.textContent = tax;
       profit_price.textContent = item_profit;
-    
-
-    
     });
-
 }
-
-// window.addEventListener('DOMContentLoaded', calculate)
 setInterval(calculate, 1000);
