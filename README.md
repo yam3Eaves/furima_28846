@@ -27,14 +27,13 @@ Things you may want to cover:
 ## items
 |  Column  |  Type  |  Options  | 
 | ---- | ---- | ----|
-|  img_url  |  string  |  null: false   |
 |  name  |  string  |  null: false  |
 |  explanation  |  text  |  null: false  |
-|  category  |  integer  |  null: false  |
-|  condition  |  integer  |  null: false  |
-|  sipping_charge_bearer  |  integer  |  null: false |
-|  shipping_area | integer  |  null: false |
-|  days_untill_shipping  |  integer  |  null: false |
+|  category_id  |  integer  |  null: false  |
+|  condition_id  |  integer  |  null: false  |
+|  sipping_charge_bearer_id  |  integer  |  null: false |
+|  shipping_area_id | integer  |  null: false |
+|  days_untill_shipping_id  |  integer  |  null: false |
 |  price  |  integer  |  null: false  |
 |  user  |  references  |  null: false, foreign_key: true  |
 
@@ -48,8 +47,8 @@ Things you may want to cover:
 ## purchasers
 |  Column  |  Type  |  Options  | 
 | ---- | ---- | ----|
-|  user  |  references  |  null: false, foreign: true  |
-|  item  |  references  |  null: false, foreign: true  |
+|  user  |  references  |  null: false, foreign_key: true  |
+|  item  |  references  |  null: false, foreign_key: true  |
 
 ### Asociation
 
