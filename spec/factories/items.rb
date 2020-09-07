@@ -8,6 +8,7 @@ FactoryBot.define do
     shipping_area_id               {  Faker::Number.between(from: 1 ,to: 5) }
     days_untill_shipping_id        {  Faker::Number.between(from: 1 ,to: 5) }
     price                          {  Faker::Number.between(from: 300 ,to: 9999999) }
+    
     association :user
   end
 end

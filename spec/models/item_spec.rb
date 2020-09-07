@@ -3,11 +3,9 @@ require 'rails_helper'
 RSpec.describe Item, type: :model do
   before do
     @item = FactoryBot.build(:item)
+    @item.image = fixture_file_upload('public/images/test_image.png')
   end
-  describe 'ログインユーザー' do
-  end
- 
-
+  
   describe '新規商品出品' do
 
       context '出品がうまくいくとき' do
@@ -114,6 +112,13 @@ RSpec.describe Item, type: :model do
           @item.valid?
           expect(@tweet.errors.full_messages).to include("User must exist")
         end
+
+        it '画像が空では出品できない' do
+          @item.image = nil
+          @item.valid?
+          expect(@tweet.errors.full_messages).to include("Image can't be blank")
+        end
+
 
       end
 
