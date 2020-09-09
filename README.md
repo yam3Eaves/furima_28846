@@ -21,7 +21,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
-- has_many :purchasers
+- has_many :orders
 
 
 ## items
@@ -38,13 +38,13 @@ Things you may want to cover:
 |  user  |  references  |  null: false, foreign_key: true  |
 
 
-### Asociation
+### Association
 - belongs_to :user
-- has_one :purchase
+- has_one :order
 
 
 
-## purchasers
+## orders
 |  Column  |  Type  |  Options  | 
 | ---- | ---- | ----|
 |  user  |  references  |  null: false, foreign_key: true  |
@@ -71,6 +71,6 @@ Things you may want to cover:
 |  purchase  |  references  |  null: false, foreign_key:true |
 
 
-## Asociation
+## Association
 
-- belongs_to :purchase
+- belongs_to :order
