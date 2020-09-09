@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
   # ログインしていないユーザーは一覧と詳細以外にアクセスするとログイン画面に遷移
  before_action :authenticate_user!, except: [:index, :show]
-  #ログインしていても、出品者でないと編集ページに遷移しない
- before_action :correct_user, only: [:edit, :update]
+  #ログインしていても、出品者でないと編集ページや変更、削除遷移しない
+ before_action :correct_user, only: [:edit, :update, :destroy]
  
  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
