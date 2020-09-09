@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   #ログインしていても、出品者でないと編集ページに遷移しない
  before_action :correct_user, only: [:edit, :update]
  
- before_action :set_item, only: [:show, :edit]
+ before_action :set_item, only: [:show, :edit, :update]
 
 
  def index
@@ -33,10 +33,8 @@ class ItemsController < ApplicationController
  def edit
  end
 
- def update
-  item = Item.find(params[:id])
-  
-   if item.update(item_params)
+ def update  
+   if @item.update(item_params)
     redirect_to item_path
    else
     render :edit
