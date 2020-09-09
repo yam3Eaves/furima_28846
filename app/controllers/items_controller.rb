@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   #ログインしていても、出品者でないと編集ページに遷移しない
  before_action :correct_user, only: [:edit, :update]
  
- before_action :set_item, only: [:show, :edit, :update]
+ before_action :set_item, only: [:show, :edit, :update, :destroy]
 
 
  def index
@@ -41,6 +41,14 @@ class ItemsController < ApplicationController
    end
  end
 
+ def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      render :show 
+    end
+ end
+  
  private
 
 
