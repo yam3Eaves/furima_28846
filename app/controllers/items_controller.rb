@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   #ログインしていても、出品者でないと編集ページに遷移しない
  before_action :correct_user, only: [:edit, :update]
  
+ before_action :set_item, only: [:show, :edit]
 
 
  def index
@@ -27,11 +28,9 @@ class ItemsController < ApplicationController
  end
 
  def show
-   @item = Item.find(params[:id])
  end
 
  def edit
-   @item = Item.find(params[:id])
  end
 
  def update
@@ -58,4 +57,7 @@ class ItemsController < ApplicationController
     end
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
 end
