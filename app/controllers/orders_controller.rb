@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   #ログインしていないユーザーはログインページに遷移する
-  before_action :authenticate_user!, only: [:index, :create]
+  before_action :authenticate_user!
   #出品者が購入ページに遷移を試みた場合、トップページに遷移
   before_action :go_index_seller, only: [:index, :create]
   #購入済商品の購入ページにURLから遷移しようとするとトップページに遷移する
@@ -40,14 +40,14 @@ class OrdersController < ApplicationController
 
   def go_index_seller
     @item = Item.find(params[:item_id])
-    if current_user.id == @item.id 
+    if current_user.id == @item.user_id 
       redirect_to root_path
     end
   end
 
   def go_index_soldout
-    @address = Address.find(params[:item_id])
-    if @address.order_id != nil
+    @order = Order.find_by(item_id: params[:item_id])
+    if @order != nil
        redirect_to root_path
     end
   end
