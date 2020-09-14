@@ -21,7 +21,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
-- has_many :purchasers
+- has_many :orders
 
 
 ## items
@@ -38,27 +38,27 @@ Things you may want to cover:
 |  user  |  references  |  null: false, foreign_key: true  |
 
 
-### Asociation
+### Association
 - belongs_to :user
-- has_one :purchase
+- has_one :order
 
 
 
-## purchasers
+## orders
 |  Column  |  Type  |  Options  | 
 | ---- | ---- | ----|
 |  user  |  references  |  null: false, foreign_key: true  |
 |  item  |  references  |  null: false, foreign_key: true  |
 
-### Asociation
+### Association
 
 - belongs_to :item
 - belongs_to :user
-- has_one :deliver_address
+- has_one :address
 
 
 
-## deliver_addresses
+## addresses
 
 |  Column  |  Type  |  Options  | 
 | ---- | ---- | ----|
@@ -68,9 +68,9 @@ Things you may want to cover:
 |  address  |  string  |  null: false  |
 |  building_name  |  string  |    |
 |  tel_num  |  string  |  null: false  |
-|  purchase  |  references  |  null: false, foreign_key:true |
+|  order  |  references  |  null: false, foreign_key:true |
 
 
-## Asociation
+## Association
 
-- belongs_to :purchase
+- belongs_to :order

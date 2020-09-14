@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :days_untill_shipping
 
   belongs_to :user
-  #  モデルやテーブル未作成のため後ほど has_one :purchase
+  has_one :order
 
   has_one_attached :image
   
