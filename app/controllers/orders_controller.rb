@@ -6,13 +6,13 @@ class OrdersController < ApplicationController
   #購入済商品の購入ページにURLから遷移しようとするとトップページに遷移する
   before_action :go_index_soldout, only: [:index, :create]
 
+  before_action :set_item, only: [:index, :create]
+  
   def index  
     @order = OrderAddress.new
-    @item = Item.find(params[:item_id])
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @order = OrderAddress.new(order_params)
     if @order.valid?
       pay_item
@@ -50,5 +50,9 @@ class OrdersController < ApplicationController
     if @order != nil
        redirect_to root_path
     end
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 end
