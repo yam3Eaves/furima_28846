@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   before_action :go_index_soldout, only: [:index, :create]
 
   before_action :set_item, only: [:index, :create]
-  
+
   def index  
     @order = OrderAddress.new
   end
@@ -56,3 +56,4 @@ class OrdersController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 end
+ 
